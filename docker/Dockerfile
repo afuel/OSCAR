@@ -1,6 +1,8 @@
-FROM nvidia/cuda:10.2-devel-ubuntu18.04
+FROM nvidia/cuda:11.1.1-cudnn8-devel
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-key adv --fetch-keys "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub"
 RUN apt-get update && \
 	apt-get install -y git cmake uuid-runtime lsb-release wget software-properties-common && \
 	wget --quiet https://golang.org/dl/go1.16.6.linux-amd64.tar.gz -O ~/go.tar.gz && \

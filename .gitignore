@@ -1,0 +1,12 @@
+bin
+data-bin
+data-raw
+analyzer/build
+irlexer/irlexer
+*.sum
+__pycache__
+process-pretrain-data/2_concatjson
+process-pretrain-data/5_buildvocab
+process-pretrain-data/out
+
+*.sif
