@@ -10,3 +10,4 @@ process-pretrain-data/5_buildvocab
 process-pretrain-data/out
 
 *.sif
+*.log

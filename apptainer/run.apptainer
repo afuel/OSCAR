@@ -1,0 +1,7 @@
+Bootstrap: localimage
+From: build.sif
+
+%runscript
+    "$@"
+
+

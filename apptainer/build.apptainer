@@ -1,20 +1,12 @@
 Bootstrap: docker
 From: nvidia/cuda:11.1.1-cudnn8-devel
 
-%environment
+%post
+    export DEBIAN_FRONTEND=noninteractive
     export LANG=C.UTF-8
     export LC_ALL=C.UTF-8
     export PATH=/opt/conda/bin:$PATH
 
-%runscript
-    /bin/bash
-    cd /oscar
-    . /opt/conda/etc/profile.d/conda.sh
-    conda activate base
-
-
-%post
-    export DEBIAN_FRONTEND=noninteractive
     apt-key adv --fetch-keys "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub"
 
     apt-get update && \
