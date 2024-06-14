@@ -4,7 +4,7 @@ BASE_DIR=/work/users/${USER:0:1}/${USER:1:1}/$USER && \
 sbatch \
     --mail-type=FAIL \
     --mail-user=ak@cs.unc.edu \
-    --job-name=process-pretrain \
+    --job-name=process-bindiff \
     -o "/work/users/${USER:0:1}/${USER:1:1}/${USER}/OSCAR/slurm/logs/%x_%j_%N.log" \
     --nodes=1 \
     --ntasks=1 \

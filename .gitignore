@@ -8,6 +8,7 @@ __pycache__
 process-pretrain-data/2_concatjson
 process-pretrain-data/5_buildvocab
 process-pretrain-data/out
+process-poj-classification-data
 
 *.sif
 *.log
