@@ -3,17 +3,17 @@
 BASE_DIR=/work/users/${USER:0:1}/${USER:1:1}/$USER && \
 sbatch \
     --mail-type=FAIL \
-    --mail-user=ak@cs.unc.edu \
+    --mail-user=audreyfuel33@gmail.com \
     --job-name=process-bindiff \
     -o "/work/users/${USER:0:1}/${USER:1:1}/${USER}/OSCAR/slurm/logs/%x_%j_%N.log" \
     --nodes=1 \
     --ntasks=1 \
     --cpus-per-task=32 \
-    --mem=32G \
+    --mem=64G \
     -p general \
     -t 12:00:00 \
     --wrap="\
         module add apptainer/1.3.0-1; \
-        apptainer run --bind ${BASE_DIR}/OSCAR:/oscar ${BASE_DIR}/OSCAR/apptainer/oscar.sif \
+        apptainer run --bind ${BASE_DIR}/OSCAR:/oscar ${BASE_DIR}/OSCAR/apptainer/run.sif \
         ${BASE_DIR}/OSCAR/slurm/process.sh bindiff-data
         "
